@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "539173617669",
+    "firebase_url": "https://tracky-4f66d-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "tracky-4f66d",
+    "storage_bucket": "tracky-4f66d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:539173617669:android:4713c207d103ea6bc01c6c",
+        "android_client_info": {
+          "package_name": "com.example.targetachievernew"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbKA1_wZMH9Vj8a5iOF3qCFchWc7oBHt8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:539173617669:android:995873285d2fe917c01c6c",
+        "android_client_info": {
+          "package_name": "com.rumanweb.goalsetter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbKA1_wZMH9Vj8a5iOF3qCFchWc7oBHt8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
