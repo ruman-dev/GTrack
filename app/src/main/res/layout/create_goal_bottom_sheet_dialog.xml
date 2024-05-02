@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/layoutBackground"
+
+    >
+
+    <ImageView
+        android:id="@+id/statCoverImg"
+        android:layout_width="256dp"
+        android:layout_height="256dp"
+        android:src="@drawable/stats"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/addNewGoalTxt"
+        android:scaleType="centerCrop"
+        />
+
+    <TextView
+        android:id="@+id/addNewGoalTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add a New Goal"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_above="@id/addNewGoalDescTxt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+        />
+
+    <TextView
+        android:id="@+id/addNewGoalDescTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Your new journey starts here! Build your own personalized goal or discover your perfect match from our expertly curated list"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:textColor="#D5D5D5"
+        android:layout_above="@id/chooseFromTemplatesBtn"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/createCustomGoalBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/layout_shape_btn"
+        android:backgroundTint="#C7C7C8"
+        android:textColor="#1F58E4"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="35dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:text="Create Custom Goal"
+        android:textAllCaps="true"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/chooseFromTemplatesBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/layout_shape_btn"
+        android:textColor="@color/white"
+        android:layout_above="@+id/createCustomGoalBtn"
+        android:layout_marginBottom="25dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:text="Choose From Templates"
+        android:textAllCaps="true"
+        />
+
+</RelativeLayout>

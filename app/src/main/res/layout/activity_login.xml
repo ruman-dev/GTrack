@@ -6,17 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primaryBackColor"
-    tools:context=".LoginActivity">
+        tools:context=".LoginActivity">
 
     <ProgressBar
-        android:id="@+id/progressBarSignIn"
+        android:id="@+id/progressBarLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:layout_below="@id/loginLayout"
         android:indeterminate="true"
-        android:indeterminateDrawable="@drawable/progressbar"
-        android:indeterminateTintMode="src_atop"
-        android:visibility="visible" />
+        android:indeterminateTint="@color/white"
+        android:layout_marginTop="50dp"
+        android:visibility="gone" />
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
@@ -25,7 +26,6 @@
         app:title="Tracky"
         app:titleTextColor="@color/white"
         android:paddingStart="30dp"
-
         />
 
     <LinearLayout
@@ -40,13 +40,12 @@
             android:id="@+id/tracky_logo"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_centerVertical="true"
-            android:src="@drawable/titlelogo" />
+            android:src="@drawable/titlelogo"
+            android:contentDescription="tracky" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_marginStart="12dp"
             android:layout_toRightOf="@id/tracky_logo"
             android:text="Tracky"
@@ -55,6 +54,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/loginLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/logoLayout"
@@ -151,6 +151,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@drawable/layout_shape_btn"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
             android:text="Sign in"
             android:textAllCaps="false"
             android:textColor="@color/white" />

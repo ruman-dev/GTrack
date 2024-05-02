@@ -9,14 +9,13 @@
 
 
     <ProgressBar
-        android:id="@+id/progressBarSignUp"
+        android:id="@+id/progressBarRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:visibility="visible"
-        android:indeterminateDrawable="@drawable/progressbar"
         android:indeterminate="true"
-        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/white"
         />
 
     <androidx.appcompat.widget.Toolbar

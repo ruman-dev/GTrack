@@ -37,7 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
     RadioGroup radioGrpGender;
     Button signUpBtn;
     TextView signInBtn;
-    ProgressBar progressBar;
+    ProgressBar progressBarRegister;
     final Calendar myCalendar = Calendar.getInstance();
 
 
@@ -61,7 +61,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         signInBtn = findViewById(R.id.signIn);
         signUpBtn = findViewById(R.id.signUpBtn);
-        progressBar = findViewById(R.id.progressBarSignUp);
+        progressBarRegister = findViewById(R.id.progressBarRegister);
 
         DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -135,7 +135,7 @@ public class RegisterActivity extends AppCompatActivity {
                     userConfirmPwd.clearComposingText();
                 }
                 else {
-                    progressBar.setVisibility(View.VISIBLE);
+                    progressBarRegister.setVisibility(View.VISIBLE);
                     genderStr = radioBtnSelected.getText().toString();
                     registerUser(nameStr, emailStr,dobStr, genderStr, pwdStr );
                 }
@@ -166,22 +166,18 @@ public class RegisterActivity extends AppCompatActivity {
                         assert firebaseUser != null;
                         firebaseUser.sendEmailVerification();
 
-
                         Intent myIntent = new Intent(RegisterActivity.this, LoginActivity.class);
                         myIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
 
-
-
-                        progressBar.setVisibility(View.GONE);
+                        progressBarRegister.setVisibility(View.GONE);
                         Toast.makeText(getApplicationContext(), "Registration successful!!", Toast.LENGTH_LONG).show();
                         startActivity(myIntent);
                         finish();
-
-
                     } else {
                         // registration failed
+                        progressBarRegister.setVisibility(View.GONE);
                         Toast.makeText(getApplicationContext(), "Registration failed!! Provide correct info or wait sometime!!", Toast.LENGTH_LONG).show();
-                        progressBar.setVisibility(View.GONE);
+
                     }
                 });
     }

@@ -20,13 +20,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
-
     EditText email, password;
     Button signInBtn;
     TextView forgotPassword, signUp;
-    ProgressBar progressBar;
+    ProgressBar progressBarLogin;
     FirebaseAuth mAuth;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,15 +38,15 @@ public class LoginActivity extends AppCompatActivity {
         forgotPassword = findViewById(R.id.forgotPassword);
         signUp = findViewById(R.id.signUp);
         signInBtn = findViewById(R.id.signInBtn);
-        progressBar = findViewById(R.id.progressBarSignIn);
+        progressBarLogin = findViewById(R.id.progressBarLogin);
         mAuth = FirebaseAuth.getInstance();
 
-        progressBar.setVisibility(View.INVISIBLE);
+        //progressBarLogin.setVisibility(View.GONE);
 
         signInBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                progressBar.setVisibility(View.VISIBLE);
+                progressBarLogin.setVisibility(View.VISIBLE);
 
                 String emailStr, passwordStr;
 
@@ -57,21 +55,20 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (TextUtils.isEmpty(emailStr) || TextUtils.isEmpty(passwordStr)) {
                     Toast.makeText(getApplicationContext(), "Please enter correct info!!", Toast.LENGTH_LONG).show();
-                    return;
+                    progressBarLogin.setVisibility(View.GONE);
                 }
                 mAuth.signInWithEmailAndPassword(emailStr, passwordStr)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(
                                     @NonNull Task<AuthResult> task) {
+                                progressBarLogin.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
                                     Toast.makeText(getApplicationContext(), "Login successful!!", Toast.LENGTH_SHORT).show();
-                                    progressBar.setVisibility(View.GONE);
                                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                                 } else {
 
                                     // sign-in failed
-                                    progressBar.setVisibility(View.GONE);
                                     Toast.makeText(getApplicationContext(), "Login failed!! Provide correct info!!", Toast.LENGTH_SHORT).show();
 
                                 }
@@ -79,13 +76,11 @@ public class LoginActivity extends AppCompatActivity {
                         });
             }
         });
-
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
             }
         });
-
     }
 }

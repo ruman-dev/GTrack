@@ -6,15 +6,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/primaryBackColor"
     >
 
     <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarMainLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:title="Tracky"
         app:titleTextColor="@color/white"
-        android:background="@color/secondaryColor"
+        android:background="@color/statusBarColor"
+        />
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbarMainLayout"
+        android:layout_above="@id/bottomNavMainLayout"
+
         />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabBtnMainLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@color/statusBarColor"
+        android:layout_above="@+id/bottomNavMainLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/baseline_add_48"
+        />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavMainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/menu"
+        app:backgroundTint="@color/statusBarColor"
+        />
 </RelativeLayout>
